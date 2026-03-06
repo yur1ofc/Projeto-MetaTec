@@ -1,0 +1,742 @@
+/* ===== RESET E VARIÁVEIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+:root {
+    --metaltec-blue: #1e3dba;
+    --metaltec-blue-dark: #0f2a8a;
+    --metaltec-blue-light: #2e4ed6;
+    --metaltec-gray: #2c3e50;
+    --metaltec-orange: #f39c12;
+    --dark: #1a1a1a;
+    --light: #f8f9fa;
+    --white: #ffffff;
+    --gray: #6c757d;
+    --border: #e9ecef;
+}
+
+/* ===== TIPOGRAFIA ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    color: var(--dark);
+    line-height: 1.6;
+    background-color: var(--light);
+}
+
+/* ===== HEADER COM LOGO GRANDE ===== */
+.header {
+    background: var(--white);
+    box-shadow: 0 4px 20px rgba(30, 61, 186, 0.15);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid var(--metaltec-blue);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 120px; /* LOGO BEM GRANDE */
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== NAVEGAÇÃO ===== */
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--metaltec-gray);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-menu a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--metaltec-blue);
+    transition: width 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--metaltec-blue);
+}
+
+.nav-menu a:hover:after,
+.nav-menu a.active:after {
+    width: 100%;
+}
+
+.nav-menu a.active {
+    color: var(--metaltec-blue);
+    font-weight: 700;
+}
+
+.whatsapp-nav {
+    background: #25D366;
+    color: white !important;
+    padding: 0.7rem 1.5rem !important;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.whatsapp-nav:hover {
+    background: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-nav:after {
+    display: none;
+}
+
+/* ===== HERO SECTION - COM IMAGEM VISÍVEL ===== */
+.hero {
+    margin-top: 120px; /* Ajustado para a logo maior */
+    background: linear-gradient(135deg, rgba(30, 61, 186, 0.5), rgba(15, 42, 138, 0.4)), url('../imagens/hero-principal.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    color: var(--white);
+    text-align: center;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero h1 span {
+    color: var(--metaltec-orange);
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-transform: none;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Hero para páginas internas */
+.hero-interno {
+    margin-top: 120px;
+    background: linear-gradient(135deg, rgba(30, 61, 186, 0.7), rgba(15, 42, 138, 0.6)), url('../imagens/hero-interno.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+/* ===== BOTÕES ===== */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--metaltec-orange);
+    color: var(--metaltec-blue-dark);
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    background: var(--white);
+    color: var(--metaltec-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
+
+.btn-outline:hover {
+    background: var(--white);
+    color: var(--metaltec-blue);
+}
+
+.btn-secondary {
+    background: var(--metaltec-blue);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--metaltec-blue-dark);
+    transform: translateY(-3px);
+}
+
+/* ===== CARDS ===== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    border: 1px solid var(--border);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(30, 61, 186, 0.15);
+    border-color: var(--metaltec-blue);
+}
+
+.card-image {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-image:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--metaltec-blue);
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-content h3 {
+    color: var(--metaltec-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.card-content p {
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+    padding: 5rem 2rem;
+}
+
+.section-light {
+    background: var(--white);
+}
+
+.section-dark {
+    background: var(--metaltec-blue-dark);
+    color: var(--white);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--metaltec-blue);
+    margin-bottom: 3rem;
+    font-weight: 800;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--metaltec-orange);
+    margin: 1rem auto;
+}
+
+.section-title.light {
+    color: var(--white);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ===== INFO BAR ===== */
+.info-bar {
+    background: var(--metaltec-blue-dark);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+    border-bottom: 3px solid var(--metaltec-orange);
+}
+
+.info-bar span {
+    margin: 0 1.5rem;
+    display: inline-block;
+}
+
+.info-bar i {
+    color: var(--metaltec-orange);
+    margin-right: 0.5rem;
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* ===== LISTA DE SERVIÇOS ===== */
+.servicos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.servico-item {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--metaltec-blue);
+}
+
+.servico-item h3 {
+    color: var(--metaltec-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.servico-item ul {
+    list-style: none;
+}
+
+.servico-item li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.servico-item li:before {
+    content: "✓";
+    color: var(--metaltec-orange);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* ===== PORTFOLIO GRID ===== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 300px;
+    cursor: pointer;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, var(--metaltec-blue), transparent);
+    color: var(--white);
+    padding: 2rem;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+/* ===== SOBRE ===== */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.sobre-imagem {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.valor-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.valor-icon {
+    font-size: 3rem;
+    color: var(--metaltec-blue);
+    margin-bottom: 1rem;
+}
+
+/* ===== CONTATO ===== */
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contato-info {
+    background: var(--light);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.contato-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.contato-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--metaltec-blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.contato-text h4 {
+    color: var(--metaltec-blue);
+    margin-bottom: 0.3rem;
+}
+
+.contato-form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--metaltec-gray);
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--metaltec-blue);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.mapa {
+    margin-top: 4rem;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: var(--metaltec-blue-dark);
+    color: var(--white);
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.footer-col h4 {
+    color: var(--metaltec-orange);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-col p {
+    color: rgba(255,255,255,0.8);
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.footer-col a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--metaltec-orange);
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 3rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+    z-index: 999;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background: #128C7E;
+}
+
+/* ===== TABELAS ===== */
+.tabela-contato {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.tabela-contato td {
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+.tabela-contato tr:first-child td {
+    background: var(--metaltec-blue);
+    color: white;
+    font-weight: bold;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sobre-grid,
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .logo img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero {
+        margin-top: 100px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero h1 span {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-bar span {
+        display: block;
+        margin: 0.5rem 0;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .logo img {
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .logo img {
+        height: 70px;
+    }
+}
