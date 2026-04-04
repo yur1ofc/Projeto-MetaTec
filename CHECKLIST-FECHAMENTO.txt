@@ -1,0 +1,17 @@
+SITE FINALIZADO
+
+Ajustes concluídos:
+- Contatos oficiais atualizados em todas as páginas
+- WhatsApp, telefone, e-mail e Instagram clicáveis
+- Formulário com envio para e-mail via FormSubmit e fallback para WhatsApp
+- SEO básico aplicado em todas as páginas (title, description, robots, OG, Twitter)
+- Schema LocalBusiness adicionado
+- Favicon e manifest adicionados
+- Robots.txt adicionado
+- Mapa apontando para o endereço informado
+- Correções visuais e de usabilidade
+
+Antes de publicar:
+- Testar o formulário já hospedado
+- Confirmar se o primeiro envio do FormSubmit foi ativado no e-mail informado
+- Subir o site na hospedagem com domínio próprio
