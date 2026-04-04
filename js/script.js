@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const expanded = this.getAttribute('aria-expanded') === 'true';
             this.setAttribute('aria-expanded', String(!expanded));
             navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open', !expanded && window.innerWidth <= 992);
         });
 
         navMenu.querySelectorAll('a').forEach(link => {
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (window.innerWidth <= 992) {
                     menuToggle.setAttribute('aria-expanded', 'false');
                     navMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
                 }
             });
         });
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (window.innerWidth > 992) {
                 navMenu.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
             }
         });
     }
